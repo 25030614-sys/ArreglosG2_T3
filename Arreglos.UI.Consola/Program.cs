@@ -7,10 +7,14 @@
         Mirreglo oMiArreglo = new MiArreglo(10);
         try
         {
-            for (int i = 1; i < oMiArreglo.N; i++)
-            {
-                oMiArreglo.agregar(i * 3);
-            }
+            oMiArreglo.Agregar(10)
+            oMiArreglo.Agregar(5)
+            oMiArreglo.Agregar(-4)
+
+            oMiArreglo.WriteLine(oMiArreglo);
+            Console.ReadKey();
+
+            oMiArreglo.insertar(200, 500)
         }
         catch (Exeption ex)
         {

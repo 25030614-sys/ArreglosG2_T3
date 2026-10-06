@@ -96,3 +96,13 @@ public void Agregar(int numero)
             return salida;
         }
 }
+
+
+
+
+
+
+{
+    throw neww exception("el areglo esta lleno");
+}
+for (int i = _arreglo[])
