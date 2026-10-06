@@ -69,6 +69,13 @@ public void Cambiar(ref int a,ref int b)
     b = aux
 }
 
+//Metodo agregar
+
+public void Agregar(int numero)
+{
+    if (llenar)
+}
+
         public override string ToString()
         {
             if (EstaVacio)

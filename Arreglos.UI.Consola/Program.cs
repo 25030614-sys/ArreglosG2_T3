@@ -5,6 +5,19 @@
         Console.WriteLine("Arreglos");
 
         Mirreglo oMiArreglo = new MiArreglo(10);
+        try
+        {
+            for (int i = 1; i < oMiArreglo.N; i++)
+            {
+                oMiArreglo.agregar(i * 3);
+            }
+        }
+        catch (Exeption ex)
+        {
+            Console.WriteLine(ex.menssage);
+        }
+
+        Console,WriteLine(oMiArreglo);
 
         oMiArreglo.Llenar(5, 20);
 
