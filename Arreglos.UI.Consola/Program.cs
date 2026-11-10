@@ -1,33 +1,56 @@
-﻿internal class Program
+﻿using Arreglos.Logica;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Arreglos");
+        Console.WriteLine("\nArreglos");
 
-        Mirreglo oMiArreglo = new MiArreglo(10);
+        MiArreglo oMiArreglo = new MiArreglo(5);
+
         try
         {
-            oMiArreglo.Agregar(10)
-            oMiArreglo.Agregar(5)
-            oMiArreglo.Agregar(-4)
+            //for (int i = 0; i < oMiArreglo.N; i++)
+            //{
+            //    oMiArreglo.Agregar(i * 3);
+            //}
 
-            oMiArreglo.WriteLine(oMiArreglo);
+            oMiArreglo.Agregar(10);
+            oMiArreglo.Agregar(5);
+            oMiArreglo.Agregar(-4);
+
+            Console.WriteLine(oMiArreglo);
             Console.ReadKey();
 
-            oMiArreglo.insertar(200, 500)
+            oMiArreglo.Insertar(200, -50);
+
+            Console.WriteLine(oMiArreglo);
+            Console.ReadKey();
+
+            oMiArreglo.Eliminar(0);
         }
-        catch (Exeption ex)
+        catch (Exception ex)
         {
-            Console.WriteLine(ex.menssage);
+            Console.WriteLine(ex.Message);
         }
 
-        Console,WriteLine(oMiArreglo);
+        Console.WriteLine(oMiArreglo);
 
-        oMiArreglo.Llenar(5, 20);
+        //Console.WriteLine(oMiArreglo);
 
-        Console,WriteLine("/nMiArreglo desordenado");
-        Console,WriteLine(oMiArreglo);
+        //oMiArreglo.Llenar(5, 20);
 
+        //Console.WriteLine("\nDatos desordenados");
+        //Console.WriteLine(oMiArreglo);
 
-        Console.ReadKey(),}
+        //Console.WriteLine("\nDatos ordenados ascendente");
+        //oMiArreglo.Ordenar();
+        //Console.WriteLine(oMiArreglo);
+
+        //Console.WriteLine("\nDatos ordenados descendente");
+        //oMiArreglo.Ordenar(false);
+        //Console.WriteLine(oMiArreglo);
+
+        Console.ReadKey();
+    }
 }

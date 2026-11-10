@@ -1,108 +1,168 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System;
 
 namespace Arreglos.Logica
 {
     public class MiArreglo
     {
-        //Atributos o campos
-
+        // Atributos o campos
         private int _tope;
+        private int[] _arreglo;
 
-        private int[] :arreglo;
-
-        //constuctor
-
-            public MiArreglo(int n)
+        // Constructores
+        public MiArreglo(int n)
         {
             N = n;
             _arreglo = new int[N];
             _tope = 0;
         }
 
-        //propiedades
+        // Propiedades
         public int N { get; }
         public bool EstaVacio => _tope == 0;
-        public bool EstaVacio => _tope == N;
-        //Metodos
+        public bool EstaLleno => _tope == N;
 
+        // Metodo llenar con parametros
         public void Llenar(int minimo, int maximo)
         {
             Random oRandom = new Random();
 
             for (int i = 0; i < N; i++)
             {
-                _arrego[i] = oRandom.Next(minimo, maximo);
+                _arreglo[i] = oRandom.Next(minimo, maximo);
+                _tope++;
             }
-            _tope = N
-    }
 
-        //Metodo Ordenar
-        partial void Ordenar()
-        {
-            Oredenar(true);
+            _tope = N;
         }
 
-        //Metodo Ordenar
-        partial void Ordenar(bool ascendente)
+        // Metodo ordenar
+        public void Ordenar()
         {
-            for (int i = 0: i < _tope; i++)
+            Ordenar(true);
+        }
+
+        // Metodo ordenar ascendente y descendente
+        public void Ordenar(bool ascendente)
+        {
+            for (int i = 0; i < _tope - 1; i++)
             {
-                for(int j = i+1; j < _tope; j++)
+                for (int j = i + 1; j < _tope; j++)
                 {
-                    if (acendente)
+                    if (ascendente)
                     {
-                        if(_arreglo[i] > _arreglo[j])
+                        if (_arreglo[i] > _arreglo[j])
+                        {
+                            Cambiar(ref _arreglo[i], ref _arreglo[j]);
+                        }
                     }
-                    if (_arreglo[i] > _arreglo[j])
+                    else
                     {
-                        Cambiar(_arreglo[i]; _arreglo[j]);
+                        if (_arreglo[i] < _arreglo[j])
+                        {
+                            Cambiar(ref _arreglo[i], ref _arreglo[j]);
+                        }
                     }
                 }
             }
         }
-//Metodo cambiar
 
-public void Cambiar(ref int a,ref int b)
-{
-    int aux = a;
-    a = b;
-    b = aux
-}
+        // Metodo cambiar
+        public void Cambiar(ref int a, ref int b)
+        {
+            int aux = a;
+            a = b;
+            b = aux;
+        }
 
-//Metodo agregar
+        // Metodo agregar
+        public void Agregar(int numero)
+        {
+            if (EstaLleno)
+            {
+                throw new Exception("El arreglo esta lleno");
+            }
 
-public void Agregar(int numero)
-{
-    if (llenar)
-}
+            _arreglo[_tope] = numero;
+            _tope++;
+        }
 
+        // Metodo insertar
+        public void Insertar(int numero, int posicion)
+        {
+            if (EstaLleno)
+            {
+                throw new Exception("El arreglo esta lleno");
+            }
+
+            if (posicion < 0)
+            {
+                posicion = 0;
+            }
+
+            if (posicion > _tope)
+            {
+                posicion = _tope;
+            }
+
+            for (int i = _tope; i > posicion; i--)
+            {
+                _arreglo[i] = _arreglo[i - 1];
+            }
+
+            _arreglo[posicion] = numero;
+            _tope++;
+        }
+
+        // Metodo eliminar
+        public void Eliminar(int posicion)
+        {
+            if (EstaVacio)
+            {
+                throw new Exception("El arreglo esta vacio");
+            }
+
+            if (posicion < 0)
+            {
+                posicion = 0;
+            }
+
+            if (posicion >= _tope)
+            {
+                posicion = _tope - 1;
+            }
+
+            for (int i = posicion; i < _tope - 1; i++)
+            {
+                _arreglo[i] = _arreglo[i + 1];
+            }
+
+            _tope--;
+        }
+
+        // Metodo ToString
         public override string ToString()
         {
             if (EstaVacio)
             {
-                return "El arreflo esta "
+                return "El arreglo esta vacío";
             }
-            string salida = string.Empy;
-            for (int i = 0; i < _tope: i++)
+
+            string salida = string.Empty;
+            int contador = 0;
+
+            for (int i = 0; i < _tope; i++)
             {
-                salida +0 $"{_arreglo[i]}/t";
+                salida += $"{_arreglo[i]}\t";
                 contador++;
+
                 if (contador > 9)
                 {
                     contador = 0;
-                    salida += "/n"
+                    salida += "\n";
                 }
             }
+
             return salida;
         }
+    }
 }
-
-
-
-
-
-
-{
-    throw neww exception("el areglo esta lleno");
-}
-for (int i = _arreglo[])
