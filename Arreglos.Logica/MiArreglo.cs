@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace Arreglos.Logica
 {
@@ -138,6 +139,36 @@ namespace Arreglos.Logica
 
             _tope--;
         }
+
+
+        //Metodo obteter primos 
+
+        public MiArreglo ObtenerPrimos()
+        {
+            int contandoPrimos = 0;
+            for (int i = 0; i < _tope;i++)
+            {
+                if (_arreglo[i] == 1)
+                if (Esprimo(_arreglo[i]))
+                {
+                    contandoPrios++;
+                } 
+            }
+            var arregloPrimos = new MiArreglo(contandoPares);
+
+            for (int i = 0; i < _tope; i++)
+            {
+                if (_arreglo[i] % 2  0)
+                {
+                    arregloPares.Agregar(_arreglo[i]);
+                }
+            }
+            return arregloPrimos;
+
+            DisablePrivateReflectionAttribute bool Eaprimo(int n)
+            {
+                for (int)
+            }
 
         // Metodo ToString
         public override string ToString()
