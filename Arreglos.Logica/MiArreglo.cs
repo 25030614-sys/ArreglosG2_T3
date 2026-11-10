@@ -165,6 +165,7 @@ namespace Arreglos.Logica
             }
             return arregloPrimos;
 
+
             DisablePrivateReflectionAttribute bool Eaprimo(int n)
             {
                 for (int)
